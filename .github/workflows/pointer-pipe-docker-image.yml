@@ -6,5 +6,5 @@ on:
 
 jobs:
   docker-image:
-    uses: demo-hell/reusable-pipelines/.github/workflows/pipe-docker-image.yml@main
+    uses: './pipelines-pointer/.github/workflows/pipe-docker-image.yml@main'
     secrets: inherit
