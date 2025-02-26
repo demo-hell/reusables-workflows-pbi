@@ -1,4 +1,4 @@
-name: CI
+name: POINTER
 on:
   push:
   workflow_call:
@@ -6,4 +6,9 @@ on:
 jobs:
   docker-image:
     uses: demo-hell/reusable-pipelines/.github/workflows/docker-image.yml@main
+    with:
+      workflow_id: DOCKER_IMAGE
+      workflow_file: .github/workflows/docker-image.yml
+      ref: main
+      inputs: '{}'
     secrets: inherit
