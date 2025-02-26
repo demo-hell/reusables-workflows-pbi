@@ -1,10 +1,9 @@
 name: CI
 on:
   push:
-  workflow_run:
-    workflows: ['DOCKER-IMAGE']
-    types:
-      - completed
+  workflow_call:
+
 jobs:
   docker-image:
     uses: demo-hell/reusable-pipelines/.github/workflows/docker-image.yml@main
+    secrets: inherit
