@@ -1,0 +1,6 @@
+name: CI
+on:
+  push:
+jobs:
+  docker-image:
+    uses: demo-hell/reusable-pipelines/.github/workflows/docker-image.yml@main
