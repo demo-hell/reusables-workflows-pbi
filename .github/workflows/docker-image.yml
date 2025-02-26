@@ -2,6 +2,14 @@ name: POINTER
 on:
   push:
   workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+      password:
+        required: true
+        type: string
+
 jobs:
   docker-image:
     uses: demo-hell/reusable-pipelines/.github/workflows/docker-image.yml@main
