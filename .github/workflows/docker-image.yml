@@ -1,14 +1,8 @@
 name: POINTER
+
 on:
   push:
-  workflow_call:
-    inputs:
-      username:
-        required: true
-        type: string
-      password:
-        required: true
-        type: string
+  workflow_dispatch:
 
 jobs:
   docker-image:
