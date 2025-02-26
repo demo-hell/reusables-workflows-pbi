@@ -8,7 +8,6 @@ jobs:
     uses: demo-hell/reusable-pipelines/.github/workflows/docker-image.yml@main
     with:
       workflow_id: DOCKER-IMAGE
-      workflow_file: demo-hell/reusable-pipelines/.github/workflows/docker-image.yml
       ref: main
       inputs: '{}'
     secrets: inherit
