@@ -2,10 +2,7 @@ name: POINTER
 on:
   push:
   workflow_call:
-
 jobs:
   docker-image:
     uses: demo-hell/reusable-pipelines/.github/workflows/docker-image.yml@main
-    with:
-      config-path: demo-hell/reusable-pipelines/.github/workflows/docker-image.yml@main
     secrets: inherit
