@@ -5,6 +5,8 @@ on:
   workflow_call:
 
 jobs:
-  docker-image:
-    uses: demo-hell/reusable-pipelines/.github/actions/pipe-docker-image.yml@main
-    secrets: inherit
+  pointer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker Image
+        uses: demo-hell/reusable-pipelines/.github/actions/pipe-docker-image
