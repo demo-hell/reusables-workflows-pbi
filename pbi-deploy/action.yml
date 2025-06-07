@@ -1,0 +1,39 @@
+name: 'pbi-deploy'
+description: 'Faz o deploy de artefatos do Power BI em um workspace do Fabric.'
+
+inputs:
+  FABRIC_CLIENT_ID:
+    description: 'ID do cliente Service Principal'
+    required: true
+  FABRIC_CLIENT_SECRET:
+    description: 'Segredo do cliente Service Principal'
+    required: true
+  FABRIC_TENANT_ID:
+    description: 'ID do locatário Service Principal'
+    required: true
+  FABRIC_WORKSPACE_ID:
+    description: 'ID do workspace do Fabric'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.12"
+
+    - name: Install Python Dependencies
+      shell: bash
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Deployment PowerBI Workspace      
+      shell: bash
+      env:
+        FABRIC_WORKSPACE_ID: ${{ inputs.FABRIC_WORKSPACE_ID }}
+        FABRIC_CLIENT_ID: ${{ inputs.FABRIC_CLIENT_ID }}
+        FABRIC_CLIENT_SECRET: ${{ inputs.FABRIC_CLIENT_SECRET }}
+        FABRIC_TENANT_ID: ${{ inputs.FABRIC_TENANT_ID }}          
+      run: python deploy_workspace.py

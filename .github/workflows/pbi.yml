@@ -1,0 +1,20 @@
+name: pbi
+  
+on:
+  workflow_call:
+    inputs:
+      FABRIC_WORKSPACE_ID:
+        required: true
+        type: string
+
+jobs:
+  pbi-deploy:    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Deploy Power BI items
+        uses: demo-hell/reusables-workflows-pbi/pbi-deploy@master
+        with:
+          FABRIC_WORKSPACE_ID: ${{ inputs.FABRIC_WORKSPACE_ID }}
