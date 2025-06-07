@@ -37,4 +37,6 @@ runs:
         FABRIC_CLIENT_ID: ${{ inputs.FABRIC_CLIENT_ID }}
         FABRIC_CLIENT_SECRET: ${{ inputs.FABRIC_CLIENT_SECRET }}
         FABRIC_TENANT_ID: ${{ inputs.FABRIC_TENANT_ID }}          
-      run: python deploy_workspace.py
+      run: |
+        env
+        python deploy_workspace.py
