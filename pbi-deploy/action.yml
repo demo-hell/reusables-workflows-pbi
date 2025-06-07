@@ -39,4 +39,4 @@ runs:
         FABRIC_TENANT_ID: ${{ inputs.FABRIC_TENANT_ID }}          
       run: |
         env
-        python deploy_workspace.py
+        python pbi-deploy/deploy_workspace.py
