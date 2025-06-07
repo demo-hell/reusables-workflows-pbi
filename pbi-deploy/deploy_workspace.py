@@ -12,18 +12,6 @@ client_id = os.getenv("FABRIC_CLIENT_ID")
 client_secret = os.getenv("FABRIC_CLIENT_SECRET")
 tenant_id = os.getenv("FABRIC_TENANT_ID")
 
-# Verificação das variáveis obrigatórias
-missing_vars = []
-if not client_id:
-    missing_vars.append("FABRIC_CLIENT_ID")
-if not client_secret:
-    missing_vars.append("FABRIC_CLIENT_SECRET")
-if not tenant_id:
-    missing_vars.append("FABRIC_TENANT_ID")
-
-if missing_vars:
-    raise ValueError(f"As seguintes variáveis de ambiente estão vazias ou não definidas: {', '.join(missing_vars)}")
-
 token_credential = ClientSecretCredential(client_id=client_id, client_secret=client_secret, tenant_id=tenant_id)
 
 # Supported Item Types fabric-cicd
