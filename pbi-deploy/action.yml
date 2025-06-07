@@ -38,5 +38,4 @@ runs:
         FABRIC_CLIENT_SECRET: ${{ inputs.FABRIC_CLIENT_SECRET }}
         FABRIC_TENANT_ID: ${{ inputs.FABRIC_TENANT_ID }}          
       run: |
-        env
         python "$GITHUB_ACTION_PATH/deploy_workspace.py"

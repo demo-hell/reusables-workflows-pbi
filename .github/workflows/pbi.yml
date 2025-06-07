@@ -14,7 +14,7 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v4
 
-      - name: Deploy Power BI Workspace
+      - name: Deploy PowerBI Workspace
         uses: demo-hell/reusables-workflows-pbi/pbi-deploy@master
         with:
           FABRIC_WORKSPACE_ID: ${{ inputs.FABRIC_WORKSPACE_ID }}
